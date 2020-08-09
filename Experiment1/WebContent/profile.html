@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="profile.css">
+
+</head>
+<body style="background-image: url('book5.jpg'); background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+
+<ul>
+  <li style="font-size:40px;float:left;">Amazon</li>
+  <li><a href="cart.html">Cart</a></li>
+ <li><a href="catalog.html">Catalog</a></li>
+  <li><a href="profile.html">Profile</a></li>
+  <li><a href="login.html">Login</a></li>
+   <li><a href="signup.html">Register</a></li>
+</ul>
+<h1><center>USER PROFILE</center></h1>
+
+<div align="center">
+<form action="homepage.html" style="background-color: #e3b946;width:40%;border: 1px #57B846; box-sizing: border-box;">
+  
+  <div class="container" align="left">
+    
+    <label align="left" style="color:white;">Enter Your Name</label><br/>
+    <input type="text" placeholder="Name" name="Name" required>
+    <br/>
+    <br/>
+    <label style ="color:white;text-align:left;">Enter your Email</label><br/>
+    <input type="email" placeholder="Email" name="Email" required>
+    <br/>
+    <br/>
+    <label style ="color:white;text-align:left;">Enter your Mobile No</label><br/>
+    <input type="tel" placeholder="Mobile No" name="Mobileno" required>
+    <br/>
+    <br/>
+    <label style ="color:white;text-align:left;">Enter your Password</label><br/>
+    <input type="password" placeholder="Password" name="Password" required>
+    <br/>
+    
+    
+    <p align="left" style="color:white;font-size:13px;">Enter Address</p>
+	<textarea rows="5" cols="60" placeholder="Enter your address here..."></textarea>
+  </div>
+
+
+   <div class="container1" align="left">
+ <label align="left" style="color:white;">Select Your Gender:</label><br/>
+  <input type="radio"  name="male" value="Male">
+  <label style="color:white;">Male</label><br>
+   <input type="radio"  name="female" value="Female">
+  <label style="color:white;">Female</label><br>
+   <input type="radio"  name="others" value="Others">
+  <label style="color:white;">Others</label> 
+   </div>
+   
+
+<div>
+<button onclick="myFunction()" style="background-color:#1e8738;" type="submit"><b>Submit</b></button>
+<a href='profile.html'><button  style="background-color:#1e8738;" type="reset"><b>Reset</b></button></a>
+
+</div>
+   
+</form>
+</div>
+
+
+
+<script>
+function myFunction() {
+	window.location.href="login.html";
+}
+</script>
+
+
+</body>
+</html>

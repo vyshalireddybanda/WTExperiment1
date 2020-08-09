@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="catalog.css">
+</head>
+<body style="background-image: url('blurred.jpg'); background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+<h1><center>THE BOOKS CATALOG</center></h1>
+<div class="container" align="center"><br/>
+<button onclick="myFunction1()">Programming Books</button>
+<button onclick="myFunction2()">DataBase Books</button><br/><br/>
+<button onclick="myFunction3()">OS Books</button>
+<button onclick="myFunction4()">Novels</button>
+<br/>
+<br/>
+
+<p style="font-size:21px;" id="demo"></p>
+
+
+<script>
+function myFunction1() {
+
+	var data="<h2>THE PROGRAMMING BOOKS AVAILABLE ARE</h2><p>C<br/>JAVA<br/>PYTHON<br/>R<br/>C++<br/>JAVASCRIPT<br/></p>";  
+	document.getElementById("demo").innerHTML = data;
+	  
+}
+function myFunction2() {
+	
+	var data="<h2>THE DATABASE BOOKS AVAILABLE ARE</h2><p>Oracle<br/><br/>MYSQLServer<br/><br/>MongoDB<br/><br/>MYSQL<br/><br/>DBMS<br/><br/></p>";  
+	document.getElementById("demo").innerHTML = data;
+	  
+	  
+}
+function myFunction3() {
+	
+	var data="<h2>THE OPERATING SYSTEM BOOKS AVAILABLE ARE</h2><p>Operating System Concepts by  Abraham Silberschatz<br/><br/>Modern Operating Systems by Andrew S. Tanenbaum<br/><br/>Understanding The Linux Kernel by Daneil P. Bovet<br/><br/>UNIX Power Tools by Jerry Peek<br/><br/>Operating Systems by Harvey Deitel</p>";  
+	document.getElementById("demo").innerHTML = data;
+	  
+}
+function myFunction4() {
+	
+	var data="<h2>THE NOVELS AVAILABLE ARE</h2><p>SONS AND LOVERS by D.H. Lawrence<br/><br/>THE GREAT GATSBY by F. Scott Fitzgerald<br/><br/>UNDER THE VOLCANO by Malcolm Lowry<br/><br/>BRAVE NEW WORLD by Aldous Huxley<br/><br/>DARKNESS AT NOON by Arthur Koestler<br/><br/>THE WINGS OF THE DOVE by Henry James<br/></p>";  
+	document.getElementById("demo").innerHTML = data;
+	  
+}
+</script>
+
+
+
+ <a href='cart.html'><button  style="font-size:20px;background-color:#1e8738">CLICK HERE TO BUY THE BOOKS</button></a> 
+  
+</div>
+</body>
+</html>
