@@ -18,16 +18,16 @@
 <div align="center">
 
 
-<form action="catalog.html" style="text-align:center;background-color:white;width:35%; border: 1px #57B846;box-sizing: border-box;">
+<form name="loginform"  onsubmit="return validateForm()" method="post" action="catalog.html" style="text-align:center;background-color:white;width:35%; border: 1px #57B846;box-sizing: border-box;">
   
   <h2 style="margin:0 auto;width:88%;"><center>Login</center></h2>
   <div class="container">
     
-    <input  type="text" placeholder="Username/Email" name="uname" required>
+    <input  type="text" placeholder="Username/Email" name="uname">
     <br/>
     <br/>
 	<br/>
-     <input  type="password" placeholder="Password" name="psw" required>
+     <input  type="password" placeholder="Password" name="psw">
     <br/>    <br/>
 
     <p style="text-align:center;font-size:12px;margin-left:170px;color:#808080">&nbsp&nbsp&nbsp&nbspForgot <a href="forgotpassword.html" style="color:#003366;text-decoration: none;">Password?</a></p><br/><br/>
@@ -40,9 +40,23 @@
   <a href="signup.html" style="color:#003366;text-decoration: none;font-size:12px;"href="#"><b>REGISTER HERE</b></a>.</p>
 </form>
 </div>
-
-
-
+<script>
+function validateForm() {
+	  var x = document.forms["loginform"]["uname"].value;
+	  var y = document.forms["loginform"]["psw"].value;
+	  if (x == "" && y == "") {
+			alert("Fields Can't Be Empty");
+			return false;
+	  }
+	  else if (x == "" && y != "") {
+		    alert("UserName must be filled out");
+		    return false;
+	  }
+	  else if (y == "" && x != "") {
+			alert("Password must be filled out");
+			return false;
+	  }
+}
 </script>
 </body>
 </html>
