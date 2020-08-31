@@ -18,46 +18,78 @@
 <div align="center">
 
 
-<form name="loginform"  onsubmit="return validateForm()" method="post" action="catalog.html" style="text-align:center;background-color:white;width:35%; border: 1px #57B846;box-sizing: border-box;">
+<form name="loginform" method="post"  action="catalog.html" onsubmit="return validateForm()" style="text-align:center;background-color:white;width:35%; border: 1px #57B846;box-sizing: border-box;">
   
   <h2 style="margin:0 auto;width:88%;"><center>Login</center></h2>
   <div class="container">
-    
-    <input  type="text" placeholder="Username/Email" name="uname">
+    <br/>
+    <input  type="text" id="uname" placeholder="Username/Email" name="uname" onblur = "newFunc(this)">
     <br/>
     <br/>
 	<br/>
-     <input  type="password" placeholder="Password" name="psw">
+     <input type="password" id="psw" placeholder="Password" name="psw" onblur = "newFunc(this)">
     <br/>    <br/>
 
-    <p style="text-align:center;font-size:12px;margin-left:170px;color:#808080">&nbsp&nbsp&nbsp&nbspForgot <a href="forgotpassword.html" style="color:#003366;text-decoration: none;">Password?</a></p><br/><br/>
+    <p style="text-align:center;font-size:12px;margin-left:170px;color:#808080">&nbsp&nbsp&nbsp&nbspForgot <a href="forgotpassword.html" style="color:#003366;text-decoration: none;">Password?</a></p><br/>
  
-   <button onclick="myfunction()" style="background-color:#003366;" type="submit"><b>LOGIN</b></button><br/><br/>
-   
+   <button style="background-color:#003366;" type="submit"><b>LOGIN</b></button><br/><br/>
+    
 
    <p style="font-size:12px;color:#808080">Don't have an account?<br/><br/>
   
   <a href="signup.html" style="color:#003366;text-decoration: none;font-size:12px;"href="#"><b>REGISTER HERE</b></a>.</p>
-</form>
-</div>
-<script>
+	</div>
+	</form>
+	</div>
+
+
+<script>  
 function validateForm() {
-	  var x = document.forms["loginform"]["uname"].value;
-	  var y = document.forms["loginform"]["psw"].value;
-	  if (x == "" && y == "") {
+	  
+	  var a = document.getElementById("uname").value;
+	  var b = document.getElementById("psw").value;
+	  
+	  
+	  if (a == "" || b == "") {
 			alert("Fields Can't Be Empty");
 			return false;
 	  }
-	  else if (x == "" && y != "") {
-		    alert("UserName must be filled out");
+	 
+	  if (a!="" && a.length<4) {
+		    alert("Length of username is too small");
 		    return false;
 	  }
-	  else if (y == "" && x != "") {
-			alert("Password must be filled out");
-			return false;
+	  if (a!="" && a.length>10) {
+		    alert("Length of username is too big");
+		    return false;
 	  }
+	 
+	  if(b!="" && b.length<4) {
+		    alert("Length of password is too small");
+		    return false;
+	  }
+	  
+	  if(b!="" && b.length>10) {
+		    alert("Length of password is too big");
+		    return false;
+	  }
+	  
+	  else{
+		  alert("Login Success");
+		  return true;
+	  }
+	    
+	  	
+	}
+
+
+function newFunc(a) {
+    a.style.background = "#c3d7e6";
 }
+
 </script>
+
+
 </body>
 </html>
 

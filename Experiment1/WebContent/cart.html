@@ -4,9 +4,43 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="cart.css">
+
+
+<script> 
+function validateForm(){
+	var result = document.getElementById('book').value;
+	var a      = document.getElementById("quan").value;
+	var a1     = parseInt(a)
+	if (result == "0") {
+		alert("Please Select The Book");
+		return false;
+	}
+	
+	 if (a == "") {
+			alert("Enter the quanity");
+			return false;
+	  }
+	 
+	 if(a!="" && a1>5){
+		 alert("maximum 5 books can be selected");
+		 return false;
+	 }
+	 else{
+		 alert("Book added successfully to the cart");
+	 
+	 	return true;
+	 }
+}
+
+
+function newFunc(a) {
+    a.style.background = "#c3d7e6";
+}
+
+</script>
 </head>
-<body
-	style="background-image: url('cart.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+
+<body style="background-image: url('cart.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 	<ul>
 		<li style="font-size: 40px; float: left;">Amazon</li>
 		<li><a href="cart.html">Cart</a></li>
@@ -18,17 +52,13 @@
 	<div align="center">
 
 
-		<form action="payment.html"
-			style="text-align: center; background-color: white; width: 35%; border: 1px #57B846; box-sizing: border-box;">
+		<form name="cartform" action="payment.html" method="post" onsubmit="return validateForm() ;" style="text-align: center; background-color: white; width: 35%; border: 1px #57B846; box-sizing: border-box;">
 
-			<h2 style="margin: 0 auto; width: 88%;">
-				<center>SHOPPING CART</center>
-			</h2>
+			<h2 style="margin: 0 auto; width: 88%;"><center>SHOPPING CART</center></h2>
 			<div class="container">
 
-				<select id="books" name="books">
-					<option value="" disabled selected><b></>Select The
-							Book</b></option>
+				<select id="book" name="books" onblur = "newFunc(this)">
+					<option value="0" disabled selected><b></>Select The Book</b></option>
 					<option value="C">C</option>
 					<option value="JAVA">JAVA</option>
 					<option value="C#">C#</option>
@@ -39,35 +69,23 @@
 					<option value="MYSQL Server">MYSQL Server</option>
 					<option value="MongoDB">MongoDB</option>
 					<option value="Oracle">Oracle</option>
-					<option value="SONS AND LOVERS by D.H. Lawrence">SONS AND
-						LOVERS by D.H. Lawrence</option>
-					<option value="THE GREAT GATSBY by F. Scott Fitzgerald">THE
-						GREAT GATSBY by F. Scott Fitzgerald</option>
-					<option value="UNDER THE VOLCANO by Malcolm Lowry">UNDER
-						THE VOLCANO by Malcolm Lowry</option>
-					<option value="BRAVE NEW WORLD by Aldous Huxley">BRAVE NEW
-						WORLD by Aldous Huxley</option>
-					<option value="DARKNESS AT NOON by Arthur Koestler">DARKNESS
-						AT NOON by Arthur Koestler</option>
-					<option value="THE WINGS OF THE DOVE by Henry James">THE
-						WINGS OF THE DOVE by Henry James</option>
-
-
-
-
-
-
-				</select><br /> <br /> <br /> <input type="number"
-					placeholder="Enter Quantity" name="quantity" required><br />
+					<option value="SONS AND LOVERS by D.H. Lawrence">SONS AND LOVERS by D.H. Lawrence</option>
+					<option value="THE GREAT GATSBY by F. Scott Fitzgerald">THE GREAT GATSBY by F. Scott Fitzgerald</option>
+					<option value="UNDER THE VOLCANO by Malcolm Lowry">UNDER THE VOLCANO by Malcolm Lowry</option>
+					<option value="BRAVE NEW WORLD by Aldous Huxley">BRAVE NEW WORLD by Aldous Huxley</option>
+					<option value="DARKNESS AT NOON by Arthur Koestler">DARKNESS AT NOON by Arthur Koestler</option>
+					<option value="THE WINGS OF THE DOVE by Henry James">THE WINGS OF THE DOVE by Henry James</option>
+				</select><br /> <br /> <br /> 
+				<input type="number" placeholder="Enter Quantity" id="quan" name="quantity" min="1" onblur = "newFunc(this)"><br />
 				<br />
 
 
-				<button style="font-size: 20px; background-color: #1e8738;"
-					type="submit">PROCEED TO BUY</button>
+				<button style="font-size: 20px; background-color: #1e8738;"type="submit">PROCEED TO BUY</button>
 
 
 				<br /> <br />
 				<p>*Cost of one book is equal to 100</p>
+				</div>
 		</form>
 	</div>
 </body>

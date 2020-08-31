@@ -5,6 +5,86 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="signup.css">
 
+
+<script>  
+function validateForm() {
+	  
+	  
+	
+	  var a = document.getElementById("uname").value;
+	  var b = document.getElementById("email").value;
+	  var c = document.getElementById("mobileno").value;
+	  var d = document.getElementById("psw").value;
+	  var e = document.getElementById("rpsw").value;
+	  
+	  
+	  if (a == "") {
+			alert("Please enter a username");
+			return false;
+	  }
+	  
+	  if (b == "") {
+			alert("Please enter the email");
+			return false;
+	  }
+	  if (c == "") {
+			alert("Please enter the mobile number");
+			return false;
+	  }
+	  
+	  if(c!="" && c.length!=10){
+		  alert("Enter a valid Mobile Number");
+		  return false
+	  }
+	  
+	  if (d == "") {
+			alert("Please enter the password");
+			return false;
+	  }
+	  if (e == "") {
+			alert("Please re-enter the password");
+			return false;
+	  }
+	
+	  if (a!="" && a.length<4) {
+		    alert("Length of username is too small");
+		    return false;
+	  }
+	 
+	  if (a!="" && a.length>12) {
+		    alert("Length of username is too big the max length is 12");
+		    return false;
+	  }
+	  
+	  if(d!="" && d.length<4) {
+		    alert("Length of password is too small");
+		    return false;
+	  }
+	  
+	  if(d!="" && d.length>12) {
+		    alert("Length of password is too big the max length is 12");
+		    return false;
+	  }
+	  
+	  if(d!=e){
+		  alert("Mismatch In Passwords");
+		  return false;
+	  }
+	  else{	
+		  alert("Successfully Registered");
+		  return true;
+	  }
+	  
+	 
+}
+
+    function newFunc(a) {
+        a.style.background = "#c3d7e6";
+    }
+
+</script>
+
+
 </head>
 <body style="background-image: url('book6.jpg'); background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
 <ul>
@@ -19,66 +99,33 @@
 <div align="center">
 
 
-<form name="signupform" onsubmit="return validateForm()" method="post" action="login.html" style="text-align:center;background-color:white;width:35%; border: 1px #57B846; box-sizing: border-box;">
+<form name="signupform"  method="post"  action="login.html" onsubmit="return validateForm()" style="text-align:center;background-color:white;width:35%; border: 1px #57B846; box-sizing: border-box;">
   
   <h2 style="margin:0 auto;width:88%;"><center>REGISTER</center></h2>
   <div class="container">
     
-    <input  type="text" placeholder="Username" name="uname">
+    <input  type="text" id="uname" placeholder="Username" name="username" onblur = "newFunc(this)" >
     <br/>
     <br/>
 
-	<input  type="email" placeholder="Email" name="email">
+	<input  type="email" id="email" placeholder="Email" name="emailid" onblur = "newFunc(this)">
     <br/>
     <br/>
-     <input  type="tel" placeholder="Mobile Number" name="mobileno">
-    <br/>
-	<br/>
-    <input  type="password" placeholder="Password" name="psw">
+     <input  type="tel" id="mobileno" pattern="[0-9]{0,10}" placeholder="Mobile Number" maxlength=10 name="mobilenumber" onblur = "newFunc(this)">
     <br/>
 	<br/>
-	<input  type="password" placeholder="Re-enter Password" name="rpsw">
+    <input  type="password" id="psw" placeholder="Password" name="password" onblur = "newFunc(this)">
+    <br/>
+	<br/>
+	<input  type="password" id="rpsw" placeholder="Re-enter Password" name="repeatpsw" onblur = "newFunc(this)">
     <br/>
 	<br/>
 	<br/>
     
    <button style="background-color:#003366;" type="submit"><b>REGISTER</b></button><br/><br/>
-
+  </div>
 </form>
 </div>
-<script>  
-function validateForm() {
-	  var a = document.forms["signupform"]["uname"].value;
-	  var b = document.forms["signupform"]["email"].value;
-	  var c = document.forms["signupform"]["mobileno"].value;
-	  var d = document.forms["signupform"]["psw"].value;
-	  var e = document.forms["signupform"]["rpsw"].value;
-	  
-	  if (a == "" && b == "" && c == "" && d == "" && e == "") {
-			alert("Fields Can't Be Empty");
-			return false;
-	  }
-	  else if (a == "") {
-		    alert("UserName must be filled out");
-		    return false;
-	  }
-	  else if (b == "") {
-			alert("Email must be filled out");
-			return false;
-	  }
-	  else if (c == "") {
-			alert("MobileNumber must be filled out");
-			return false;
-	  }
-	  else if (d == "") {
-			alert("Password must be filled out");
-			return false;
-	  }
-	  else if (e == "") {
-			alert("You forgot to re-enter the password");
-			return false;
-	  }
-}
-</script>
+
 </body>
 </html>

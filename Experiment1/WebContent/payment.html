@@ -3,14 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <link rel="stylesheet" href="payment.css">
+
+<script>
+function validateForm() {
+	  
+	  var a = document.getElementById("nameoncard").value;
+	  var b = document.getElementById("creditcardno").value;
+	  var c = document.getElementById("cvvno").value;
+	  var d = document.getElementById("month").value;
+	  var e = document.getElementById("year").value;
+	  var f = document.getElementById("amount").value;
+	  var g = document.getElementById("address").value;
+	 
+	 
+	 if (a == "") {
+			alert("Please enter the name on card");
+			return false;
+	  }
+	 
+	 
+      
+	  if (b == "") {
+			alert("Please enter the credit card number");
+			return false;
+	  }
+
+ 	
+	  if (c == "") {
+			alert("Please enter the cvv number");
+			return false;
+	  }
+	  
+	 	  
+	  if (d == "0") {
+			alert("Please Select The Expiry Month");
+			return false;
+	  }
+	  
+	  if (e == "0") {
+			alert("Please Select The Expiry year");
+			return false;
+	  }
+	  
+	  
+	  if (f == "") {
+			alert("Please enter the amount");
+			return false;
+	  }
+	  
+	  if (g == "") {
+			alert("Please enter the shipping address");
+			return false;
+	  }
+	
+	  return true;
+	  
+	 
+}
+
+    function newFunc(a) {
+        a.style.background = "#c3d7e6";
+    }
+
+   
+    
+</script>
 </head>
+
 <body style="background-image: url('payment.jpeg'); background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
 <ul>
   <li style="font-size:40px;float:left;">Amazon</li>
   <li><a href="cart.html">Cart</a></li>
- <li><a href="catalog.html">Catalog</a></li>
+  <li><a href="catalog.html">Catalog</a></li>
   <li><a href="profile.html">Profile</a></li>
   <li><a href="login.html">Login</a></li>
    <li><a href="signup.html">Register</a></li>
@@ -18,48 +83,73 @@
 <div align="center">
 
 
-<form action="confirm.html" style="text-align:center;background-color:white;width:35%; border: 1px #57B846;box-sizing: border-box;">
+<form name="paymentform" method="post" action="confirm.html" onsubmit="return validateForm()" style="text-align:center;background-color:white;width:35%; border: 1px #57B846;box-sizing: border-box;">
   
   <h2 style="margin:0 auto;width:88%;"><center>Payment By Credit Card</center></h2>
   <div class="container">
     <label style="color:black;float:left;">Enter Name On Card:</label><br/>
-    <input  type="text" placeholder="Name On Card" name="name" required>
+    <input  type="text" id="nameoncard" maxlength=26 placeholder="Name On Card" name="name" onblur = "newFunc(this)">
     <br/>
     <br/>
 	
 	<label style="color:black;float:left;">Enter Credit Card Number:</label><br/>
-	<input  type="text" placeholder="Credit Card Number" name="cardno" required>
+	<input  type="text" id="creditcardno" pattern="[0-9]{13,16}"  maxlength=16 placeholder="Credit Card Number" name="cardno" onblur = "newFunc(this)">
     <br/>
 	<br/>
 	
 	<label style="color:black;float:left;">Enter Your CVV:</label><br/>
-	<input  type="text" placeholder="CVV" name="cvv" required>
+	<input  type="text" id= "cvvno" pattern="[0-9]{3}" placeholder="CVV" name="cvv" maxlength=3 onblur = "newFunc(this)">
     <br/>
 	<br/>
 	
-	 <label style="color:black;float:left;">Expiry Month & Year:</label>
-	<input  style="width:80px;" type="text" placeholder="Month" name="expmonth" required>
-   
+	 <label style="color:black;float:left;">Expiry Month And Year:</label><br/>
+	<select  id="month" name="expmonth" onblur = "newFunc(this)">
+   			<option value="0" disabled selected>Month</option>
+					<option value="January">January</option>
+					<option value="February">February</option>
+					<option value="March">March</option>
+					<option value="April">April</option>
+					<option value="May">May</option>
+					<option value="June">June</option>
+					<option value="July">July</option>
+					<option value="August">August</option>
+					<option value="Sepetember">September</option>
+					<option value="October">October</option>
+					<option value="November">November</option>
+					<option value="December">December</option>
+					
+	</select>
  
   
-   	<input style="width:80px;" type="text" placeholder="Year" name="expyear" required>
+   	<select id="year" name="expyear" onblur = "newFunc(this)">
+					<option value="0" disabled selected>Year</option>
+					<option value="2021">2021</option>
+					<option value="2022">2022</option>
+					<option value="2023">2023</option>
+					<option value="2024">2024</option>
+					<option value="2025">2025</option>
+					<option value="2026">2026</option>
+					<option value="2027">2027</option>
+					<option value="2028">2028</option>
+					<option value="2029">2029</option>
+					<option value="2030">2030</option>
+					<option value="2031">2031</option>
+					
+				</select><br /> 
 	<br/>
 	
 	<label style="color:black;float:left;">Enter Amount:</label><br/>
-	<input  type="text" placeholder="Enter The Amount" name="cardno" required>
+	<input  type="text" id="amount" pattern="[0-9]{0,6}" placeholder="Enter The Amount" maxlength = 6 name="money" onblur = "newFunc(this)">
     <br/>
 
 	
     <p align="left" style="color:black;font-size:15px;">Enter Shipping Address:</p>
-	<textarea rows="5" cols="42" placeholder="Enter your address here..."></textarea><br/>
+	<textarea rows="5" cols="42" id="address" placeholder="Enter your address here..." onblur = "newFunc(this)"></textarea><br/>
     
- 
-
-
-    <button  style="font-size:20px;background-color:#1e8738" type="submit">MAKE PAYMENT</button>
+ 	<button style="font-size:20px;background-color:#1e8738" type="submit">MAKE PAYMENT</button>
    
   
-  
+ </div>
   	
 </form>
 </div>
