@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user id="101">
+        <firstName>Vyshali</firstName>
+        <lastName>Reddy</lastName>
+        <location>Hyderabad</location>
+        <mobile>6303645602</mobile>
+    </user>
+    <user id="102">
+        <firstName>Susmitha</firstName>
+        <lastName>Banda</lastName>
+        <location>Banglore</location>
+        <mobile>7963645602</mobile>
+        
+    </user>
+ 	 <user id="103">
+        <firstName>Neelima</firstName>
+        <lastName>Gurijala</lastName>
+        <location>Pune</location>
+        <mobile>9543645602</mobile>
+    </user>
+     <user id="104">
+        <firstName>Lakshmi</firstName>
+        <lastName>Shastry</lastName>
+        <location>Ranchi</location>
+         <mobile>9083645602</mobile>
+    </user>
+     <user id="105">
+        <firstName>Naveen</firstName>
+        <lastName>Kumar</lastName>
+        <location>Chennai</location>
+         <mobile>6673676302</mobile>
+    </user>
+    <user id="106">
+        <firstName>Kavya</firstName>
+        <lastName>Rao</lastName>
+        <location>Khammam</location>
+         <mobile>8019875602</mobile>
+    </user>
+     <user id="107">
+        <firstName>Sneha</firstName>
+        <lastName>Shetty</lastName>
+        <location>Warangal</location>
+         <mobile>6303645602</mobile>
+    </user>
+     <user id="108">
+        <firstName>Niket</firstName>
+        <lastName>Reddy</lastName>
+        <location>Hyderabad</location>
+         <mobile>9701517035</mobile>
+    </user>
+    <user id="109">
+        <firstName>Rashi</firstName>
+        <lastName>Mody</lastName>
+        <location>Rajkot</location>
+         <mobile>9988645602</mobile>
+    </user>
+    <user id="110">
+        <firstName>Prerna</firstName>
+        <lastName>Basu</lastName>
+        <location>Calcutta</location>
+         <mobile>7005645602</mobile>
+    </user>
+</users>
